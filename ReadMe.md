@@ -20,4 +20,4 @@
    pip install spotipy
    ```
    or simply `pip install openai python_dotenv spotipy` altogether!
-5. run the application: `python app.py`
+5. accept command line arguments by running `python app.py -p "Independence Day songs" -n 12`

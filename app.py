@@ -3,14 +3,28 @@ from dotenv import dotenv_values
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import json
+import argparse
 
 # import pprint
 
 config = dotenv_values(".env")
 openai.api_key = config["OPENAI_API_KEY"]
 
+parser = argparse.ArgumentParser(description="Simple command line utility")
+parser.add_argument(
+    "-p",
+    type=str,
+    default="Popular songs",
+    help="The prompt to describe the playlist.",
+)
+parser.add_argument(
+    "-n", type=int, default=9, help="The number of songs to be added to the playlist."
+)
 
-def get_playlist(prompt, count=8):
+args = parser.parse_args()
+
+
+def get_playlist(prompt, count=9):
     example_json = """
   [
     {"song": "The Dance", "artist": "Garth Brooks"},
@@ -49,7 +63,8 @@ def get_playlist(prompt, count=8):
     return playlist
 
 
-songs = get_playlist("epic songs", 3)
+# songs = get_playlist("epic songs", 3)
+songs = get_playlist(args.p, args.n)
 print(songs)
 
 # sp object is an instance of the spotipy.Spotify class, which represents a client for interacting with the Spotify API.:
@@ -74,7 +89,7 @@ for item in songs:
     track_ids.append(search_results["tracks"]["items"][0]["id"])
 
 created_playlist = sp.user_playlist_create(
-    current_user["id"], public=False, name="Testing Playlist"
+    current_user["id"], public=False, name=args.p
 )
 
 # append searched track to the playlist:
