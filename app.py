@@ -5,8 +5,6 @@ from spotipy.oauth2 import SpotifyOAuth
 import json
 import argparse
 
-# import pprint
-
 config = dotenv_values(".env")
 openai.api_key = config["OPENAI_API_KEY"]
 

@@ -2,11 +2,10 @@
 
 ## Overview:
 
-- Introduction: The Spotify Playlist Wizard is an innovative application that leverages the power of the GPT (Generative Pre-trained Transformer) model to generate music playlists on Spotify based on user prompts. This project aims to enhance the music discovery experience for Spotify users by providing personalized and relevant playlists tailored to their specific interests and preferences.
-- Tech stack: GPT, Python
-  ![Project Overview](/playlist_generator.gif)
+- **_Intro_**: The Spotify Playlist Wizard is an innovative application that leverages the power of the GPT (Generative Pre-trained Transformer) model to generate music playlists on Spotify based on user prompts. This project aims to enhance the music discovery experience for Spotify users by providing personalized and relevant playlists tailored to their specific interests and preferences.
+- **_Tech stack_**: GPT, Python
 
----
+![Project Overview](/Spotify-Playlist-Wizard.gif)
 
 ## Setup:
 
@@ -20,4 +19,4 @@
    pip install spotipy
    ```
    or simply `pip install openai python_dotenv spotipy` altogether!
-5. accept command line arguments by running `python app.py -p "Independence Day songs" -n 12`
+5. accept command line arguments by running `python app.py -p "Independence Day songs" -n 12`, for example
