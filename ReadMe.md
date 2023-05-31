@@ -20,3 +20,8 @@
    ```
    or simply `pip install openai python_dotenv spotipy` altogether!
 5. accept command line arguments by running `python app.py -p "Independence Day songs" -n 12`, for example
+
+## Resources
+
+1. Spotify for Developers: https://developer.spotify.com/
+2. Spotify web player: https://open.spotify.com/
